@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour
 {
     #region Default Values
     private int menuNumber;
+    private bool joystickToggle = true;
     #endregion
 
     #region Menu Dialogs
@@ -18,15 +19,19 @@ public class MenuController : MonoBehaviour
     [Space(10)]
     [Header("Game Components")]
     [SerializeField] private GameObject playerObj;
-
+    [SerializeField] private GameObject joystickCanvas;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        menuNumber = 0;
+        menuNumber = -1;
         hidePlayScreenUI();
         playerObj.SetActive(false);
+        joystickCanvas.SetActive(false);
+        mainMenuCanvas.SetActive(false);
+        menuSettingsCanvas.SetActive(false);
+        creditsScreenCanvas.SetActive(false);
         titleScreenCanvas.SetActive(true);
     }
 
@@ -130,28 +135,39 @@ public class MenuController : MonoBehaviour
         }
         #endregion
 
-        #region Support & Credits options
-        if (buttonType == "Support")
-        {
-            //todo
-        }
-
-        if (buttonType == "Credits")
-        {
-            //todo
-        }
-        #endregion
     }
     #endregion
 
     #region show/hide PlayscreenUI
-    public void showPlayScreenUI()
+    private void showPlayScreenUI()
     {
         playScreenCanvas.SetActive(true);
+        menuNumber = 0;
+        
+        if(joystickToggle == true)
+        {
+            joystickCanvas.SetActive(true);
+        } else if(joystickToggle == false)
+        {
+            joystickCanvas.SetActive(false);
+        }
     }
-    public void hidePlayScreenUI()
+    private void hidePlayScreenUI()
     {
         playScreenCanvas.SetActive(false);
+        joystickCanvas.SetActive(false);
     }
     #endregion
+
+    public void toggleJoysticks()
+    {
+        if (joystickToggle == true)
+        {
+            joystickToggle = false;
+        }
+        else if (joystickToggle == false)
+        {
+            joystickToggle = true;
+        }
+    }
 }

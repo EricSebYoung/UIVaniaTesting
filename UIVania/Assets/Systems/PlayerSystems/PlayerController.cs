@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //Components
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
+    private InputsController inputs;
+    private AbilitiesController abilities;
 
+    //States
     private enum State {idle, running, jumping, falling, hurt};
     private State state = State.idle;
     private bool paused = false;
+    private bool facingRight = true;
 
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 5f;
@@ -29,7 +33,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-
+        inputs = GetComponent<InputsController>();
+        abilities = GetComponent<AbilitiesController>();
     }
 
     private void Update()
@@ -44,7 +49,7 @@ public class PlayerController : MonoBehaviour
             //If Game is not Paused
             if (state != State.hurt)
             {
-                Movement();
+                HandleInput();
             }
             VelocityState();
             anim.SetInteger("state", (int)state); //Sets animation based on state
@@ -85,23 +90,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Movement()
+    private void HandleInput()
     {
-        float HDirection = Input.GetAxis("Horizontal");
-        bool jump = Input.GetButtonDown("Jump");
+        float HDirection = inputs.HDirection;
+        bool jump = inputs.jump;
+        bool fireAbility = inputs.fireAbility;
+        bool cycleAbilityLeft = inputs.cycleAbilityLeft;
+        bool cycleAbilityRight = inputs.cycleAbilityRight;
 
         //Move Left
         if (HDirection < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            transform.localScale = new Vector2(-1, 1);
+            if (facingRight)
+            {
+                Flip();
+            }
         }
 
         //Move Right
         else if ((HDirection > 0))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            transform.localScale = new Vector2(1, 1);
+            if (!facingRight)
+            {
+                Flip();
+            }
         }
 
         //Jump
@@ -112,6 +126,28 @@ public class PlayerController : MonoBehaviour
                 Jump();
         }
 
+        //Use Ability
+        if (fireAbility)
+        {
+            abilities.FireAbility();
+        }
+
+        //Cycle Ability Left
+        if (cycleAbilityLeft)
+        {
+            abilities.CycleEquip(false);
+        }
+
+        //Cycle Ability Right
+        else if (cycleAbilityRight)
+        {
+            abilities.CycleEquip(true);
+        }
+    }
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     private void VelocityState()
