@@ -1618,6 +1618,7 @@ MonoBehaviour:
   menuSettingsCanvas: {fileID: 150735955}
   creditsScreenCanvas: {fileID: 781586984}
   playerObj: {fileID: 630969589}
+  joystickCanvas: {fileID: 2028703477}
 --- !u!4 &289274564
 Transform:
   m_ObjectHideFlags: 0
@@ -2431,7 +2432,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7696958, y: 0.3136692, z: -10}
+  m_LocalPosition: {x: -3.7696958, y: 0.3135128, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11694,12 +11695,12 @@ PrefabInstance:
     - target: {fileID: 818181853930813079, guid: e54eb6b2b38a4464d952d964fe4f42d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.6717625
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 818181853930813079, guid: e54eb6b2b38a4464d952d964fe4f42d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.808344
+      value: -4.79
       objectReference: {fileID: 0}
     - target: {fileID: 818181853930813079, guid: e54eb6b2b38a4464d952d964fe4f42d8,
         type: 3}
@@ -11763,12 +11764,12 @@ PrefabInstance:
     - target: {fileID: 3861693202430005644, guid: cca3adba26507fa47828dc688e8073f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3817625
+      value: 14.77
       objectReference: {fileID: 0}
     - target: {fileID: 3861693202430005644, guid: cca3adba26507fa47828dc688e8073f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.808344
+      value: -4.86
       objectReference: {fileID: 0}
     - target: {fileID: 3861693202430005644, guid: cca3adba26507fa47828dc688e8073f4,
         type: 3}

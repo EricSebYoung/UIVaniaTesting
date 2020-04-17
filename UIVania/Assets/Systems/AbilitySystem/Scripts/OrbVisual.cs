@@ -7,6 +7,8 @@ using CodeMonkey.Utils;
 
 public class OrbVisual : MonoBehaviour
 {
+    public static OrbSystem playerOrbsStatic;
+
     [SerializeField] private Sprite orb0Sprite;
     [SerializeField] private Sprite orb1Sprite;
     [SerializeField] private AnimationClip orbFullAnimation;
@@ -38,6 +40,7 @@ public class OrbVisual : MonoBehaviour
     public void SetOrbSystem(OrbSystem orbSystem)
     {
         this.orbSystem = orbSystem;
+        playerOrbsStatic = orbSystem;
 
         List<OrbSystem.Orb> orbList = orbSystem.GetOrbList();
         Vector2 orbAnchoredPosition = new Vector2(0, 0);

@@ -90,7 +90,9 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\MenusUI\MenuController.cs" />
-    <Compile Include="Assets\PlayTests\PlayerTests.cs" />
+    <Compile Include="Assets\PlayTests\AbilitySystemTests.cs" />
+    <Compile Include="Assets\PlayTests\HeartSystemTests.cs" />
+    <Compile Include="Assets\PlayTests\PlayerMovementTests.cs" />
     <Compile Include="Assets\Prefabs\Projectiles\Player\AxeThrow.cs" />
     <Compile Include="Assets\Prefabs\Projectiles\Player\DaggerThrow.cs" />
     <Compile Include="Assets\Systems\AbilitySystem\Scripts\OrbSystem.cs" />
@@ -163,49 +165,49 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -379,7 +381,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/MasterSE345UlvaniaUI/UIVania/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/erics/OneDrive/Documents/GitHub/UIVaniaTesting/UIVania/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
