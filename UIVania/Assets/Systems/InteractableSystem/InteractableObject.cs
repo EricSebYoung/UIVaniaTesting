@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
+    //Player inputs
+    InputsController playerInputs;
+
     //World Controller
     private GameObject WorldController;
     private PauseScript pause;
@@ -25,6 +28,8 @@ public class InteractableObject : MonoBehaviour
 
     private void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerInputs = player.GetComponent<InputsController>();
         WorldController = GameObject.FindGameObjectWithTag("GameController");
         pause = WorldController.GetComponent<PauseScript>();
     }
@@ -49,10 +54,10 @@ public class InteractableObject : MonoBehaviour
 
     private void Update()
     {
-        float VDirection = Input.GetAxis("Vertical");
-        bool ConfirmInput = Input.GetButton("Jump");
+        float VDirection = playerInputs.VDirection;
+        bool ConfirmInput = playerInputs.jump;
 
-        if (VDirection > 0.1 && playerInRange && !dialogueBox.activeInHierarchy)
+        if (VDirection > 0.2 && playerInRange && !dialogueBox.activeInHierarchy)
         {
             //If pressing Up
             dialogueBox.SetActive(true);

@@ -92,6 +92,7 @@
     <Compile Include="Assets\MenusUI\MenuController.cs" />
     <Compile Include="Assets\PlayTests\AbilitySystemTests.cs" />
     <Compile Include="Assets\PlayTests\HeartSystemTests.cs" />
+    <Compile Include="Assets\PlayTests\InteractableTest.cs" />
     <Compile Include="Assets\PlayTests\PlayerMovementTests.cs" />
     <Compile Include="Assets\Prefabs\Projectiles\Player\AxeThrow.cs" />
     <Compile Include="Assets\Prefabs\Projectiles\Player\DaggerThrow.cs" />

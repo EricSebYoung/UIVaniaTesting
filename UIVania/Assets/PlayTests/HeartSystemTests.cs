@@ -15,6 +15,7 @@ namespace PlayerTests
         private GameObject camera;
         private GameObject player;
         private GameObject spikes;
+        private GameObject heart;
         private int initialHearts;
         private int heartsRemaining;
 
@@ -25,6 +26,7 @@ namespace PlayerTests
             UIControllerName = "UIController";
 
             spikes = GameObject.Find("SpikeTrap");
+            heart = GameObject.Find("FullHeart");
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.Find("CameraController");
         }
@@ -79,7 +81,16 @@ namespace PlayerTests
         [UnityTest, Order(2)]
         public IEnumerator PlayerSurvivesHeartDamage()
         {
-            HeartsVisual.playerHeartsStatic.Damage(4);
+            HeartsVisual.playerHeartsStatic.Damage(1);
+
+            //Player Destruction on damage is attached to damage animation thus we need to mimic
+            //the player actually hitting a damaging object by teleporting them to a spike object.
+            float xTeleport = spikes.transform.position.x;
+            float yTeleport = spikes.transform.position.y + 2;
+            camera.SetActive(false);
+            player.transform.position = new Vector3(xTeleport, yTeleport);
+            camera.SetActive(true);
+
             //Wait for event to occur
             yield return new WaitForSeconds(0.5f);
 
@@ -87,7 +98,7 @@ namespace PlayerTests
             Assert.NotNull(player);
         }
 
-        [UnityTest, Order(5)]
+        [UnityTest, Order(6)]
         public IEnumerator PlayerObjectDestroyedOnEmpty()
         {
             //Deal Damage
@@ -109,7 +120,28 @@ namespace PlayerTests
             Assert.Null(player);
         }
 
+        [UnityTest, Order(5)]
+        public IEnumerator HeartsHealOnHeartPickup()
+        {
+            initialHearts = GetHeartsRemaining();
 
+            //Get location of healing item
+            float xTeleport = heart.transform.position.x;
+            float yTeleport = heart.transform.position.y + 2;
+
+            camera.SetActive(false);
+            player.transform.position = new Vector3(xTeleport, yTeleport);
+            camera.SetActive(true);
+
+            //Wait for event to occur
+            yield return new WaitForSeconds(2);
+
+            heartsRemaining = GetHeartsRemaining();
+
+            //Check that hearts remaining are greater than the initial
+            //ASSERT
+            Assert.Greater(heartsRemaining, initialHearts);
+        }
 
         private int GetHeartsRemaining()
         {
